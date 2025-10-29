@@ -88,6 +88,7 @@ missingSummary.redcapApiConnection <- function(rcon,
   # Import the Meta Data --------------------------------------------
   MetaData <- rcon$metadata()
   MetaData <- MetaData[MetaData$field_type != "descriptive", ]
+  MetaData <- MetaData[MetaData$field_type != "calc", ]
   
   logic <- parseBranchingLogic(MetaData$branching_logic)
   names(logic) <- MetaData$field_name
