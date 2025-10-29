@@ -37,6 +37,7 @@
 #' 
 
 parseBranchingLogic <- function(l){
+  l <- sub("//.*","",l)
   l <- gsub("\\n", " ", l)
   l <- gsub(" or ", " | ", l, ignore.case = TRUE)
   l <- gsub(" and ", " & ", l, ignore.case = TRUE)
